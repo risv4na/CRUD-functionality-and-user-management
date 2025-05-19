@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'css/home_1.css' %}">
+    {% endblock %}
+
+    {% block content %}
+    
+    <div class="recently-visited-wrap">
+       
+        <div class="recently-visited">
+           
+            <p style="font-size: 24px;">Hey  <b>{{ request.user.username }}</b> you visted this page {{ visit }} times!!</p>
+           <u> <h4>Recently Visted Movies</h4></u>
+            {% for recently_visited_movies in recently_visited_movies %}
+            <ul>
+                <li>{{ recently_visited_movies.name }}</li>
+            </ul>
+        {% endfor  %}
+        </div>
+    </div>
+    <div class="container">
+        {% for movie in movies %}
+            <div class="movie">
+                <div class="movie-main">
+                    <img src="{{ movie.thumbnail.url }}" alt="Movie Image">
+                    <h2>{{movie.name | upper}}</h2>
+                </div>
+                <p id="summery">{{movie.summery}}</p>
+                <p>Rating : {{ movie.censor_details.rating }}</p>
+                <p>Director : {{ movie.director_name.name }}</p>
+                <p>Centified : {{ movie.censor_details.certified_by }}</p>
+                {% if movie.actors.all %}
+                <ul>
+                    <u><p style="margin-top: 0px;">Actors</p></u>
+                    {% for actor in movie.actors.all %}
+                        <li style="font-size: 14px;">{{actor.name }}</li>
+                    {% endfor %}
+                </ul>   
+                {% else %}
+                    <p>No actors listed.</p>
+                {% endif %}
+                <p id="date"><b>Release Date: </b>{{movie.date}}</p>
+                <div class="buttons"> 
+                    <a href="{% url 'delete' movie.id %}"><button class="del-button">Delete</button></a>
+                    <a href="{% url 'edit' movie.id %}"><button class="edit_button">Edit</button></a>
+                    <a href="{% url 'add_censor_info' movie.id %}"><button class="edit_button">CensorInfo</button></a>
+                </div>
+                </div>
+        {% endfor %}
+    </div>
+    
+    
+    {% endblock %}

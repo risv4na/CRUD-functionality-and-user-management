@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% endblock %}
+
+    {% block content %}
+    <p style="font-size: 24px;">Hey  <b>{{ request.user.username }}</b></p>
+    <p>List of actors</p>
+        {% if actors %}
+        <ul>
+            {% for actor in actors %}
+                <li>{{ actor.name }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>No one.</p>
+        {% endif %}
+        <form action="" method="post">
+            {% csrf_token %}
+            Actor Name:<input type="text" name="name"><br><br>
+            <input type="submit" value="OK">
+        </form>
+
+    {% endblock %}

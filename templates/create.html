@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+    
+{% block head %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+{% endblock %}
+    {% block content %}
+    <p style="font-size: 24px;">Hey  <b>{{ request.user.username }}</b></p>
+    <form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="OK"> <a href="{% url 'home' %}"><button type="button">Cancel</button></a>
+    </form>
+    {% endblock %}
+
+    

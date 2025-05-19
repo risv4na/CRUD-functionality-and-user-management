@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block head %}
+    <p>head block </p>
+    {% endblock %}
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="{% url 'create' %}"><button class="edit-button">Add Movie</button></a>
+        <a href="{% url 'add_actor_name' %}"><button class="edit-button">Add Actors</button></a>
+        <a href="{% url 'add_director_name' %}"><button class="edit-button">Add Director</button></a>
+        <a href="{% url 'home' %}"><button class="edit-button">Home</button></a>
+        <a href="{% url 'logout_view' %}"><button class="edit-button">Logout</button></a>
+
+    </div>
+    <u><h1 style="color: brown;">Movies!!</h1></u>
+    <i><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, amet, ad impedit architecto mollitia dolore tenetur, totam illo voluptatibus ipsa alias a dolorem voluptate exercitationem natus. Optio incidunt natus nobis?</p></i>
+    {% block content %}
+        <p>Defaulte content</p>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 100vh;
+}
+
+.nav-bar {
+    margin-left: auto;
+    width: auto;
+    height: 120px;
+    border-radius: 20px;
+    margin-bottom: 0%;
+}
+
+.edit-button {
+    padding: 10px;
+    background-color: rgb(95, 0, 0); 
+    margin-right: 20px; 
+    border-radius: 10px; 
+    width: auto; 
+    border-color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
+}
+
+.edit-button:hover{
+    cursor: pointer;
+    background-color: rgba(138, 0, 0, 0.815); 
+}

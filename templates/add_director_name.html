@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% endblock %}
+    {% block content %}
+    <p style="font-size: 24px;">Hey  <b>{{ request.user.username }}</b></p>
+    Directors
+        {% if directors %}
+        <ul>
+            {% for director in directors %}
+                <li>{{director.name}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="" method="post">
+            {% csrf_token %}
+            Director Name :<input type="text" name="name"><br><br>
+            <input type="submit" value="OK">
+        </form>
+    {% endblock %}

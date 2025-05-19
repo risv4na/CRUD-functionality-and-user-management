@@ -1,0 +1,152 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+}
+#action {
+    background-color: #ffffff;
+}
+
+
+.del-button {
+    padding: 10px;
+    background-color: brown; 
+    margin-right: 20px; 
+    border-radius: 10px; 
+    width: 80px; 
+    border-color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
+}
+
+.del-button:hover{
+    cursor: pointer;
+}
+
+
+.create-button {
+    padding: 10px;
+    background-color: rgb(49, 160, 182); 
+    margin-right: 20px; 
+    border-radius: 10px; 
+    width: auto; 
+    border-color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
+} 
+
+.create-button:hover{
+    cursor: pointer;
+} 
+
+.movie {
+    width: 300px;
+    height: auto;
+    background-color: rgb(253, 253, 253);
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    flex-wrap: wrap;
+    padding: 2%;
+    border: rgb(122, 33, 33) solid 4px;
+    border-radius: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    flex-wrap: wrap;
+}
+
+.movie img {
+    width: 190px;
+    height: 250px;
+    object-fit: cover; /* keeps aspect ratio without distortion */
+    border-radius: 0px; /* optional: rounded corners */
+}
+
+.movie-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    margin-top: 8px;
+    margin-bottom: 3px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+}
+
+p {
+    margin: 4px 0%;
+    font-size: 16px;
+}
+
+#date {
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+.censorinfo-button {
+    background-color: aquamarine !important;
+    width: 900px !important;
+    margin-left: auto !important;
+}
+
+.censorinfo-button button {
+    background-color: black !important;
+}
+
+
+.info-button {
+    padding: 10px;
+    background-color: rgb(6, 25, 29); 
+    margin-right: 20px; 
+    border-radius: 10px; 
+    width: 80px; 
+    border-color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
+}
+
+.edit_button {
+    padding: 10px;
+    background-color: grey; 
+    margin-right: 20px; 
+    border-radius: 10px; 
+    width: auto; 
+    border-color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
+}
+
+.edit_button:hover{
+    cursor: pointer;
+    background-color: rgb(83, 83, 83); 
+}
+
+.recently-visited-wrap {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+.recently-visited {
+    text-align: left;
+    margin-left: 20px;
+}
